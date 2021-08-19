@@ -1,30 +1,20 @@
 #include <Arduino.h>
 
-void setup()
-{
-	// put your setup code here, to run once:
+void setup(){
 
-	
-	// Set 13 to output
-	pinMode(13, OUTPUT);
-
-	
 }
 
-void loop()
-{
-	// put your main code here, to run repeatedly:
+void loop(){
 
-	// Set 13 to high
-	digitalWrite(13, HIGH); 
+	for (int i = 0; i < 255; i++) {
+		analogWrite(13, i);
 
-	// delay 1
-	delay(500);
+		delay(10);
+	}
 
-	// Set 13 to low
-	digitalWrite(13, LOW);
+	for (int i = 255; i > 0; i--) {
+		analogWrite(13, i);
 
-	// delay 2
-	delay(500);
-
+		delay(10);
+	}	
 }
